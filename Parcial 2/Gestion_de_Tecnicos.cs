@@ -19,7 +19,7 @@ namespace Parcial_2
 
         private void Gestion_de_Tecnicos_Load(object sender, EventArgs e)
         {
-            //hola
+            //holag
         }
     }
 }
