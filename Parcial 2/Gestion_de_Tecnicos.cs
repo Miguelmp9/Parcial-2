@@ -16,5 +16,10 @@ namespace Parcial_2
         {
             InitializeComponent();
         }
+
+        private void Gestion_de_Tecnicos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

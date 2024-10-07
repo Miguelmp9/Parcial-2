@@ -16,5 +16,10 @@ namespace Parcial_2
         {
             InitializeComponent();
         }
+
+        private void Registro_de_Mantenimiento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
