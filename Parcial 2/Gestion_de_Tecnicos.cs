@@ -20,6 +20,13 @@ namespace Parcial_2
         private void Gestion_de_Tecnicos_Load(object sender, EventArgs e)
         {
             //holag
+            //que tal //si funciona
+            //tal vez
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
