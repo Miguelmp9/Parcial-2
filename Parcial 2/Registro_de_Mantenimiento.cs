@@ -19,7 +19,7 @@ namespace Parcial_2
 
         private void Registro_de_Mantenimiento_Load(object sender, EventArgs e)
         {
-
+           //moandowdadon
         }
     }
 }
