@@ -1,96 +1,116 @@
-Este proyecto es una API REST desarrollada con Spring Boot que permite gestionar categorías y productos para una tienda ficticia llamada ForCookies. La arquitectura se basa en principios de programación orientada a objetos (POO) y buenas prácticas de desarrollo backend.
+Este es un proyecto desarrollado por nuestro equipo Forcookies como parte de nuestro proyecto parcial final. Creamos una API REST con Spring Boot para simular el backend de una tienda virtual llamada ForCookies, con el objetivo de practicar los conceptos de Programación Orientada a Objetos (POO), en base a los requerimientos que se nos dieron en la rubrica.
 
-🚀 Tecnologías Utilizadas
-Java 17+
 
-Spring Boot
+1-Diseño de APIs RESTful
 
-Maven
+Programación orientada a objetos y principios SOLID
 
-JPA / Hibernate
+Separación de responsabilidades (controladores, servicios, repositorios, DTOs)
 
-H2 Database (o configurable a MySQL/PostgreSQL)
+Uso de herramientas reales del entorno Java y Spring
 
-DTO Pattern
+2-Herramientas y tecnologías que usamos
+Herramienta	y para qué la usamos?
+Java 17+	El lenguaje con el que desarrollamos todo
+Spring Boot	Framework principal para crear la API
+Spring Web	Nos permitió crear los controladores REST
+Spring Data JPA	Para guardar y manejar datos fácilmente
+Maven	Gestión de dependencias y estructura del proyecto
+H2 Database	Base de datos en memoria (ideal para pruebas)
+DTOs	Para transferir datos sin exponer todo el modelo
 
-Controller-Service-Repository architecture
-
-RESTful API
-
-📁 Estructura del Proyecto
+3-Estructura del proyecto
 bash
 Copiar
 Editar
-ForCookies-APIRest-POO-developer/
-├── webapi/
-│   ├── src/main/java/com/forcookies/webapi/
-│   │   ├── controller/            # Controladores REST
-│   │   ├── payload/               # Clases auxiliares como DTOs y responses
-│   │   ├── service/               # Interfaces y servicios para lógica de negocio
-│   │   ├── entity/                # Entidades JPA (si están presentes)
-│   │   └── ForCookiesWebApiApplication.java
-│   └── src/main/resources/
-│       └── application.properties
-🧠 Funcionalidades Principales
-📂 Gestión de Categorías
+webapi/
+├── controller/            # Aquí están los endpoints REST
+├── service/               # Lógica de negocio (lo que hace realmente la app)
+├── payload/               # DTOs y respuestas personalizadas
+├── ForCookiesWebApiApplication.java  # Punto de entrada de Spring Boot
+└── resources/
+    └── application.properties         # Configuración del proyecto
+4- ¿Qué funcionalidades tiene?
+Por ahora nos enfocamos en una parte básica pero muy importante: la gestión de categorías de productos. Lo hicimos bien organizado, dejando todo listo para seguir ampliando (productos, usuarios, carrito, etc.).
 
-GET /categoria → Lista todas las categorías.
+Endpoints disponibles
+GET /categoria
+Devuelve todas las categorías guardadas.
 
-POST /categoria/crear → Crea una nueva categoría.
+POST /categoria/crear
+Permite crear una nueva categoría. Se envía un JSON con nombre y descripción.
 
-DELETE /categoria/delete?delCateogoriaId=ID → Elimina una categoría por ID.
+DELETE /categoria/delete?delCateogoriaId={id}
+Elimina la categoría según su ID.
 
-📦 (Opcional) Gestión de Productos
+5-¿Cómo lo ejecutás?
+ Requisitos
+Tener Java 17 o superior
 
-(Módulo pendiente si no está implementado aún)
+Tener Maven instalado
 
-📦 Instalación y Ejecución
-Clona el repositorio:
+Un IDE (como IntelliJ, Eclipse o VS Code)
+
+6- Pasos para correrlo
+Cloná el proyecto:
 
 bash
 Copiar
 Editar
 git clone https://github.com/tu-usuario/ForCookies-APIRest-POO-developer.git
-Abre el proyecto en tu IDE (IntelliJ, Eclipse, VS Code, etc.).
+Entrá a la carpeta:
 
-Asegúrate de tener configurado Java 17+ y Maven.
-
-Ejecuta la aplicación:
+bash
+Copiar
+Editar
+cd ForCookies-APIRest-POO-developer/webapi
+Corré la aplicación con Maven:
 
 bash
 Copiar
 Editar
 mvn spring-boot:run
-Accede a la API desde http://localhost:8080
+Abrí el navegador y accedé a:
 
-🧪 Ejemplos de Uso
-Crear una categoría (POST)
-bash
+arduino
 Copiar
 Editar
-POST /categoria/crear
+http://localhost:8080
+7- Probalo con Postman o curl
+Crear categoría
+http
+Copiar
+Editar
+POST http://localhost:8080/categoria/crear
 Content-Type: application/json
 
 {
-  "nombre": "Bebidas",
-  "descripcion": "Categoría para productos líquidos"
+  "nombre": "Snacks",
+  "descripcion": "Galletas, papas, y más"
 }
-Obtener todas las categorías (GET)
-bash
+Obtener categorías
+http
 Copiar
 Editar
-GET /categoria
-Eliminar una categoría (DELETE)
-sql
+GET http://localhost:8080/categoria
+Eliminar una categoría
+http
 Copiar
 Editar
-DELETE /categoria/delete?delCateogoriaId=1
-💡 Notas
-Este proyecto fue construido siguiendo buenas prácticas de POO.
+DELETE http://localhost:8080/categoria/delete?delCateogoriaId=1
+8- Sobre la base de datos
+Estamos usando H2, una base de datos en memoria que se reinicia cada vez que reiniciamos la app. ¡Súper práctica para pruebas!
 
-Usa DTOs para separar entidades del modelo de presentación.
+Si querés ver los datos:
 
-Puedes migrar fácilmente entre bases de datos cambiando la configuración en application.properties.
+Accedé a:
+http://localhost:8080/h2-console
 
-👨‍💻 Autor
-Desarrollado por el equipo de ForCookies con enfoque educativo y profesional.
+Usá estos datos para conectarte:
+
+yaml
+Copiar
+Editar
+JDBC URL: jdbc:h2:mem:testdb
+User: sa
+Password: 
