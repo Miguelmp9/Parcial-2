@@ -24,10 +24,15 @@ bash
 Copiar
 Editar
 webapi/
+
 ├── controller/            # Aquí están los endpoints REST
+
 ├── service/               # Lógica de negocio (lo que hace realmente la app)
+
 ├── payload/               # DTOs y respuestas personalizadas
+
 ├── ForCookiesWebApiApplication.java  # Punto de entrada de Spring Boot
+
 └── resources/
     └── application.properties         # Configuración del proyecto
 4- ¿Qué funcionalidades tiene?
