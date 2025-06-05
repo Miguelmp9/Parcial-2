@@ -116,8 +116,13 @@ http://localhost:8080/h2-console
 Usá estos datos para conectarte:
 
 yaml
+
 Copiar
+
 Editar
+
 JDBC URL: jdbc:h2:mem:testdb
-User: sa
+
+User:
+
 Password: 
