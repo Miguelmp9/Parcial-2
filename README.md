@@ -34,8 +34,10 @@ webapi/
 ├── ForCookiesWebApiApplication.java  # Punto de entrada de Spring Boot
 
 └── resources/
-    └── application.properties         # Configuración del proyecto
+application.properties         # Configuración del proyecto
+
 4- ¿Qué funcionalidades tiene?
+
 Por ahora nos enfocamos en una parte básica pero muy importante: la gestión de categorías de productos. Lo hicimos bien organizado, dejando todo listo para seguir ampliando (productos, usuarios, carrito, etc.).
 
 Endpoints disponibles
